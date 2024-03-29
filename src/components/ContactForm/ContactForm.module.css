@@ -8,13 +8,13 @@
   width: 120px;
   border-radius: 20px;
   border: 1px solid lightgray;
-  background-color: white;
+  background-color: transparent;
   cursor: pointer;
   transition: border 150ms ease-in;
 }
 
 .button:hover {
-  border: 1px solid rgb(108, 163, 86);
+  border: 1px solid rgb(54, 153, 14);
 }
 
 .error {

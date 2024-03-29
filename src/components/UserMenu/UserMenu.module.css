@@ -12,10 +12,10 @@
 .button {
   display: block;
   height: 30px;
-  width: 120px;
+  width: 90px;
   border-radius: 20px;
-  border: 1px solid lightgray;
-  background-color: white;
+  border: 1px solid lightgrey;
+  background-color: transparent;
   cursor: pointer;
   transition: border 150ms ease-in;
 }

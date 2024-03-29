@@ -1,6 +1,15 @@
 body {
   font-family: sans-serif;
   line-height: 1.5;
+  background-image: linear-gradient(
+    to left bottom,
+    #a3aac7,
+    #a1b5d1,
+    #9ebfd9,
+    #9dcadf,
+    #9ed4e3
+  );
+  min-height: 100vh;
 }
 
 h1,
@@ -15,7 +24,8 @@ p {
 
 ul,
 ol,
-body {
+body,
+button {
   margin: 0;
   padding: 0;
 }
@@ -27,4 +37,9 @@ img {
 
 a {
   text-decoration: none;
+}
+
+input,
+button {
+  background: transparent;
 }

@@ -9,17 +9,14 @@
 }
 
 .button {
-  height: 30px;
-  width: 70px;
-  border-radius: 20px;
-  border: 1px solid lightgray;
-  background-color: white;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
-  transition: border 150ms ease-in;
+  transition: color 100ms ease-in;
 }
 
 .button:hover {
-  border: 1px solid #f37878;
+  color: #fa5252;
 }
 
 .info {
