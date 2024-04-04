@@ -1,3 +1,3 @@
 # Phonebook website
 
-Personal created web application <Phonebook> 
+Personal created web application "Phonebook" 
