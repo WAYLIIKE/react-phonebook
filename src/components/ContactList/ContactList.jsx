@@ -7,10 +7,10 @@ export const ContactList = () => {
   const users = useSelector(selectFilteredContacts);
 
   return (
-    <div className={css.container}>
+    <ul className={css.container}>
       {users.map(item => (
         <Contact data={item} key={item.id} />
       ))}
-    </div>
+    </ul>
   );
 };

@@ -1,11 +1,20 @@
 .container {
+  border: 1px solid #212121;
+  border-radius: 10px;
+  flex-basis: calc((100% - 26px * 3) / 4);
+  cursor: pointer;
+  transition: box-shadow 150ms ease-in;
+}
+
+.container:hover {
+  box-shadow: 8px 8px 24px -16px rgba(66, 68, 90, 1);
+}
+
+.item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #212121;
-  border-radius: 10px;
   padding: 5px;
-  flex-basis: calc((100% - 26px * 3) / 4);
 }
 
 .button {

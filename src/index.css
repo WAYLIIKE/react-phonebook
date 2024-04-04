@@ -43,3 +43,8 @@ input,
 button {
   background: transparent;
 }
+
+ul,
+ol {
+  list-style: none;
+}
