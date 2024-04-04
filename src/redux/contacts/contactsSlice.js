@@ -5,6 +5,7 @@ import {
   deleteContact,
   patchContact,
 } from './contactsOps';
+import toast from 'react-hot-toast';
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -34,6 +35,7 @@ const contactsSlice = createSlice({
       .addCase(addContact.fulfilled, (state, action) => {
         state.loading = false;
         state.items.push(action.payload);
+        toast.success('Successfully added!');
       })
       .addCase(addContact.rejected, state => {
         state.loading = false;
@@ -46,6 +48,7 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.loading = false;
         state.items = state.items.filter(item => item.id !== action.payload.id);
+        toast.success('Successfully deleted!');
       })
       .addCase(deleteContact.rejected, state => {
         state.loading = false;
@@ -61,6 +64,7 @@ const contactsSlice = createSlice({
           if (item.id === action.payload.id) return action.payload;
           return item;
         });
+        toast.success('Successfully updated!');
       }),
 });
 

@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/contactsOps';
 import { useState } from 'react';
 import { ContactModal } from '../ContactModal/ContactModal';
+import toast from 'react-hot-toast';
 
 export const Contact = ({ data: { name, number, id } }) => {
   const dispath = useDispatch();

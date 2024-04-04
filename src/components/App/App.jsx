@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
 import { RestrictedRoute } from '../RestrictedRoute';
 import { PrivateRoute } from '../PrivateRoute';
+import { Toaster } from 'react-hot-toast';
 
 const HomePage = lazy(() => import('../../pages/Home/Home'));
 const RegisterPage = lazy(() => import('../../pages/Register/Register'));
@@ -21,6 +22,7 @@ function App() {
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
+
   return isRefreshing ? (
     <p>Refreshing...</p>
   ) : (
@@ -55,6 +57,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 }

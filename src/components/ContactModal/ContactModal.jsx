@@ -7,6 +7,7 @@ import css from './ContactModal.module.css';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { patchContact } from '../../redux/contacts/contactsOps';
+import toast from 'react-hot-toast';
 
 export const ContactModal = ({ name, number, id, onOpen, handleModal }) => {
   const inputNameId = useId();
@@ -33,7 +34,12 @@ export const ContactModal = ({ name, number, id, onOpen, handleModal }) => {
         onRequestClose={handleModal}
         ariaHideApp={false}
         className={css.modal}
-        style={{ overlay: { backgroundColor: 'rgb(73 73 73 / 65%)' } }}
+        style={{
+          overlay: {
+            backgroundColor: 'rgb(73 73 73 / 65%)',
+            transition: 'background-color 200ms ease-in',
+          },
+        }}
       >
         <TfiClose className={css.buttonClose} onClick={handleModal} size={18} />
         <Formik
