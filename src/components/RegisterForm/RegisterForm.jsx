@@ -1,6 +1,8 @@
 import css from './RegisterForm.module.css';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { useId } from 'react';
+import { FaRegUser } from 'react-icons/fa6';
+import { MdOutlineEmail } from 'react-icons/md';
+import { LuKeyRound } from 'react-icons/lu';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import { register } from '../../redux/auth/authOps';
@@ -8,18 +10,15 @@ import { register } from '../../redux/auth/authOps';
 export const RegisterForm = () => {
   const dispatch = useDispatch();
 
-  const inputNameId = useId();
-  const inputEmailId = useId();
-  const inputPasswordId = useId();
   const registerSchema = Yup.object().shape({
     name: Yup.string()
-      .min(2, 'Name must be at least 2 symbols')
-      .max(20, 'Max length is 20')
-      .required('Name is required'),
+      .min(2, 'Name must be at least 2 symbols.')
+      .max(20, 'Max length is 20.')
+      .required('Name is required.'),
     email: Yup.string()
-      .email()
-      .matches('^(?!.*@[^,]*,)', 'Invalid email')
-      .required('Email is required'),
+      .email('Email must be a valid.')
+      .matches('^(?!.*@[^,]*,)', 'Invalid email.')
+      .required('Email is required.'),
     password: Yup.string()
       .required('No password provided.')
       .min(8, 'Password is too short - should be 8 chars minimum.')
@@ -27,7 +26,9 @@ export const RegisterForm = () => {
   });
 
   return (
-    <div>
+    <div className={css.container}>
+      <h2 className={css.title}>Create Account</h2>
+      <p className={css.text}>Use your email for registration:</p>
       <Formik
         initialValues={{
           name: '',
@@ -41,42 +42,42 @@ export const RegisterForm = () => {
         validationSchema={registerSchema}
       >
         <Form className={css.wrapper}>
-          <label htmlFor={inputNameId} className={css.label}>
-            Name
-          </label>
-          <Field
-            type="text"
-            name="name"
-            id={inputNameId}
-            className={css.field}
-          ></Field>
-          <ErrorMessage name="name" component="span" className={css.error} />
-          <label htmlFor={inputEmailId} className={css.label}>
-            Email
-          </label>
-          <Field
-            type="email"
-            name="email"
-            id={inputEmailId}
-            className={css.field}
-          ></Field>
-          <ErrorMessage name="email" component="span" className={css.error} />
-          <label htmlFor={inputPasswordId} className={css.label}>
-            Password
-          </label>
-          <Field
-            type="password"
-            name="password"
-            id={inputPasswordId}
-            className={css.field}
-          ></Field>
-          <ErrorMessage
-            name="password"
-            component="span"
-            className={css.error}
-          />
+          <div className={css.formWrapper}>
+            <Field
+              type="text"
+              name="name"
+              className={css.field}
+              placeholder={`Name`}
+            ></Field>
+            <FaRegUser className={css.icon} />
+            <ErrorMessage name="name" component="span" className={css.error} />
+          </div>
+          <div className={css.formWrapper}>
+            <Field
+              type="email"
+              name="email"
+              className={css.field}
+              placeholder={`Email`}
+            ></Field>
+            <MdOutlineEmail className={css.icon} />
+            <ErrorMessage name="email" component="span" className={css.error} />
+          </div>
+          <div className={css.formWrapper}>
+            <Field
+              type="password"
+              name="password"
+              className={css.field}
+              placeholder={`Password`}
+            ></Field>
+            <LuKeyRound className={css.icon} />
+            <ErrorMessage
+              name="password"
+              component="span"
+              className={css.error}
+            />
+          </div>
           <button className={css.button} type="submit">
-            Register
+            sign up
           </button>
         </Form>
       </Formik>

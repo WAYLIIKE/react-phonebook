@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  column-gap: 23px;
+  row-gap: 15px;
   margin-bottom: 40px;
 }

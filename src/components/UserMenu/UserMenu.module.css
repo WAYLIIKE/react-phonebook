@@ -1,8 +1,7 @@
 .wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px;
+  gap: 24px;
 }
 
 .username {

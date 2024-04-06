@@ -1,15 +1,20 @@
-.label {
-  display: block;
+.container {
+  width: 100%;
+  padding: 80px 0;
 }
 
 .button {
   display: block;
-  height: 30px;
+  height: 40px;
   width: 120px;
   border-radius: 20px;
   border: 1px solid lightgray;
   cursor: pointer;
   transition: border 150ms ease-in;
+  text-transform: uppercase;
+  margin-top: 24px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .button:hover {
@@ -20,19 +25,63 @@
   display: block;
   color: var(--color-red);
   margin-bottom: 10px;
+  max-width: 300px;
 }
 
 .field {
-  margin-bottom: 10px;
-  height: 20px;
-  width: 200px;
-  border: 1px solid #212121;
-  border-radius: 10px;
-  padding-left: 10px;
+  margin-bottom: 18px;
+  height: 36px;
+  width: 300px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid var(--color-black);
+  padding-left: 26px;
+  transition: border-bottom 100ms ease-in;
+}
+
+.field:hover,
+.field:focus {
+  border-bottom: 1px solid lightgray;
+}
+
+.field:focus + .icon,
+.field:hover + .icon {
+  color: lightgray;
+}
+
+.field::placeholder {
+  color: var(--color-black);
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 24px;
+}
+
+.text {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  position: absolute;
+  color: var(--color-black);
+  top: 3px;
+  left: 0;
+  transform: translateY(50%);
+  padding-left: 6px;
+  transition: color 100ms ease-in;
+}
+
+.formWrapper {
+  position: relative;
 }

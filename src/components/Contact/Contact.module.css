@@ -4,6 +4,7 @@
   flex-basis: calc((100% - 26px * 3) / 4);
   cursor: pointer;
   transition: box-shadow 150ms ease-in;
+  max-width: 301px;
 }
 
 .container:hover {

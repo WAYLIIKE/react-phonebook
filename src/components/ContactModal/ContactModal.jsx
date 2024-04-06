@@ -18,11 +18,10 @@ export const ContactModal = ({ name, number, id, onOpen, handleModal }) => {
       .min(2, 'Name must be at least 2 symbols')
       .max(20, 'Max length is 20')
       .required('Name is required'),
-    number: Yup.number()
-      .typeError("That doesn't look like a phone number")
-      .positive("A phone number can't start with a minus")
-      .integer("A phone number can't include a decimal point")
+    number: Yup.string()
+      .matches(/^\+?[1-9][0-9]*$/, "That doesn't look like a phone number")
       .min(8, 'Number must be at least 8 symbols')
+      .max(20, 'Max length is 20')
       .required('A phone number is required'),
   });
 
