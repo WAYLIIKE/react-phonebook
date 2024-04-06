@@ -24,6 +24,7 @@
 
 .button {
   display: block;
+  font-size: 15px;
   height: 30px;
   width: 120px;
   border-radius: 20px;
@@ -41,19 +42,25 @@
 
 .error {
   display: block;
-  color: orangered;
-  margin-bottom: 8px;
+  color: var(--color-red);
+  margin-bottom: 10px;
 }
 
 .field {
   margin-bottom: 15px;
   height: 20px;
   width: 200px;
-  border: 1px solid #5f5f5f;
+  border: 1px solid var(--color-black);
   border-top: none;
   border-left: none;
   border-right: none;
   padding-left: 10px;
+  transition: border-bottom 100ms ease-in;
+}
+
+.field:hover,
+.field:focus {
+  border-bottom: 1px solid lightgray;
 }
 
 .form {

@@ -4,7 +4,6 @@ import css from './ContactForm.module.css';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/contactsOps';
-import toast from 'react-hot-toast';
 
 export const ContactForm = () => {
   const dispath = useDispatch();
@@ -25,6 +24,7 @@ export const ContactForm = () => {
 
   return (
     <div className={css.container}>
+      <h2 className={css.title}>Add new contact</h2>
       <Formik
         initialValues={{ name: '', number: '' }}
         onSubmit={(values, action) => {

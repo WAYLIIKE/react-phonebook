@@ -18,7 +18,8 @@
 
 .error {
   display: block;
-  color: orangered;
+  color: var(--color-red);
+  margin-bottom: 10px;
 }
 
 .field {

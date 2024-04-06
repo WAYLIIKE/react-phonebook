@@ -1,5 +1,5 @@
 .container {
-  border: 1px solid #212121;
+  border: 1px solid var(--color-black);
   border-radius: 10px;
   flex-basis: calc((100% - 26px * 3) / 4);
   cursor: pointer;
@@ -20,12 +20,13 @@
 .button {
   border: none;
   background-color: transparent;
+  color: var(--color-black);
   cursor: pointer;
   transition: color 100ms ease-in;
 }
 
 .button:hover {
-  color: #fa5252;
+  color: var(--color-red);
 }
 
 .info {

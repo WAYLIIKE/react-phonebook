@@ -7,7 +7,6 @@ import css from './ContactModal.module.css';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { patchContact } from '../../redux/contacts/contactsOps';
-import toast from 'react-hot-toast';
 
 export const ContactModal = ({ name, number, id, onOpen, handleModal }) => {
   const inputNameId = useId();
@@ -37,7 +36,6 @@ export const ContactModal = ({ name, number, id, onOpen, handleModal }) => {
         style={{
           overlay: {
             backgroundColor: 'rgb(73 73 73 / 65%)',
-            transition: 'background-color 200ms ease-in',
           },
         }}
       >

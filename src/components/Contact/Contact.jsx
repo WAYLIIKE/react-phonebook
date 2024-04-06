@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/contactsOps';
 import { useState } from 'react';
 import { ContactModal } from '../ContactModal/ContactModal';
-import toast from 'react-hot-toast';
 
 export const Contact = ({ data: { name, number, id } }) => {
   const dispath = useDispatch();
@@ -43,7 +42,7 @@ export const Contact = ({ data: { name, number, id } }) => {
             dispath(deleteContact(id));
           }}
         >
-          <MdDeleteForever size={25} attributeName="deleteButton" />
+          <MdDeleteForever size={25} className={css.button} />
         </button>
       </div>
       <ContactModal
