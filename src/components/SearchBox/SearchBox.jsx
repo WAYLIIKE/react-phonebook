@@ -11,9 +11,12 @@ export const SearchBox = () => {
   const reduxInputFilter = useSelector(selectNameFilter);
   return (
     <div className={css.container}>
-      <label htmlFor={searchId}>Find contacts by name</label>
+      <label htmlFor={searchId} className={css.label}>
+        Find contacts by name:
+      </label>
       <input
         className={css.input}
+        placeholder="Start enter name..."
         type="text"
         id={searchId}
         value={reduxInputFilter}

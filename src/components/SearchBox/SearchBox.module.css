@@ -5,8 +5,8 @@
 .input {
   padding-left: 10px;
   display: block;
-  width: 250px;
-  height: 25px;
+  width: 286px;
+  height: 30px;
   border-radius: 12px;
   border: 1px solid #212121;
   transition: border 100ms ease-in;
@@ -15,4 +15,9 @@
 .input:hover,
 .input:focus {
   border-color: lightgray;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
 }

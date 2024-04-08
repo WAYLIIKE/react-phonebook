@@ -1,24 +1,25 @@
 import { useId } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import css from './ContactForm.module.css';
-import * as Yup from 'yup';
+import { FaRegUser } from 'react-icons/fa6';
+import { BsTelephone } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/contactsOps';
+import css from './ContactForm.module.css';
+import * as Yup from 'yup';
 
 export const ContactForm = () => {
   const dispath = useDispatch();
-  const inputNameId = useId();
-  const inputPhoneId = useId();
+
   const contactSchema = Yup.object().shape({
     name: Yup.string()
-      .min(2, 'Name must be at least 2 symbols')
-      .max(20, 'Max length is 20')
-      .required('Name is required'),
+      .min(2, 'Name must be at least 2 symbols.')
+      .max(20, 'Max length is 20.')
+      .required('Name is required.'),
     number: Yup.string()
-      .matches(/^\+?[1-9][0-9]*$/, "That doesn't look like a phone number")
-      .min(8, 'Number must be at least 8 symbols')
-      .max(20, 'Max length is 20')
-      .required('A phone number is required'),
+      .matches(/^\+?[1-9][0-9]*$/, "That doesn't look like a phone number.")
+      .min(8, 'Number must be at least 8 symbols.')
+      .max(20, 'Max length is 20.')
+      .required('A phone number is required.'),
   });
 
   return (
@@ -33,26 +34,30 @@ export const ContactForm = () => {
         validationSchema={contactSchema}
       >
         <Form>
-          <label className={css.label} htmlFor={inputNameId}>
-            Name
-          </label>
-          <Field
-            className={css.field}
-            type="text"
-            name="name"
-            id={inputNameId}
-          ></Field>
-          <ErrorMessage className={css.error} name="name" component="span" />
-          <label className={css.label} htmlFor={inputPhoneId}>
-            Number
-          </label>
-          <Field
-            className={css.field}
-            type="tel"
-            name="number"
-            id={inputPhoneId}
-          ></Field>
-          <ErrorMessage className={css.error} name="number" component="span" />
+          <div className={css.formWrapper}>
+            <Field
+              type="text"
+              name="name"
+              className={css.field}
+              placeholder={`Name`}
+            ></Field>
+            <FaRegUser className={css.icon} />
+            <ErrorMessage name="name" component="span" className={css.error} />
+          </div>
+          <div className={css.formWrapper}>
+            <Field
+              className={css.field}
+              type="tel"
+              name="number"
+              placeholder={`Number`}
+            ></Field>
+            <BsTelephone className={css.icon} />
+            <ErrorMessage
+              className={css.error}
+              name="number"
+              component="span"
+            />
+          </div>
           <button className={css.button} type="submit">
             Add contact
           </button>
